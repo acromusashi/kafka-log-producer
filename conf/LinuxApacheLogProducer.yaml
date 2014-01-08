@@ -1,0 +1,14 @@
+## LinuxApacheLogProducer Config
+## Log Tail Command
+tail.command        : "/usr/bin/tail -F --lines=0"
+## Log Tail path
+tail.path           : "/etc/httpd/logs/access_log"
+## Kafka Topic
+kafka.topic         : "ApacheLog"
+apachelog.format    : '%h %l %u %t \"%r\" %>s %b %D %T'
+jsondate.format     : "yyyy-MM-dd'T'HH:mm:SSSZ"
+
+## KafkaProducerConfig
+kafka.serializer.class : "kafka.serializer.StringEncoder"
+kafka.compression.codec : "1"
+kafka.broker.list  : "KafkaServer:9092"
