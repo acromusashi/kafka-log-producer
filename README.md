@@ -1,7 +1,6 @@
-kafka-log-producer
-==================
+kafka-log-producerはWindows/Linux上のApacheLog形式のファイルを収集し、KafkaBrokerに対して投入を行うプロセスです。
 
-Kafka Log Producer
+## Architecture
 
 
 ## License
