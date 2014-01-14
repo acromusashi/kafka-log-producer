@@ -239,19 +239,19 @@ public class WinApacheLogProducer extends Thread
     /**
      * tailでファイルを読み込む。
      *
-     * @param file 対象のログファイル
+     * @param targetPath 対象のログファイル
      */
-    public void tailRun(File file)
+    public void tailRun(File targetPath)
     {
         try (WatchService watcher = FileSystems.getDefault().newWatchService())
         {
-            Path parentDir = file.toPath().getParent();
-            parentDir.register(watcher, ENTRY_MODIFY);
-            parentDir.relativize(file.toPath());
-            List<String> targetFileNames = getTargetLogFiles(Lists.newArrayList(parentDir.toFile().list()));
+            Path targetDir = targetPath.toPath();
+            targetDir.register(watcher, ENTRY_MODIFY);
+            targetDir.relativize(targetPath.toPath());
+            List<String> targetFileNames = getTargetLogFiles(Lists.newArrayList(targetDir.toFile().list()));
             Collections.sort(targetFileNames);
             int logFileNameSize = targetFileNames.size();
-            this.targetFile = new File(parentDir + "/" + targetFileNames.get(logFileNameSize - 1));
+            this.targetFile = new File(targetDir + "/" + targetFileNames.get(logFileNameSize - 1));
 
             while (true)
             {
@@ -286,7 +286,7 @@ public class WinApacheLogProducer extends Thread
                     {
                         break;
                     }
-                    List<String> allFileName = getTargetLogFiles(Arrays.asList(parentDir.toFile().list()));
+                    List<String> allFileName = getTargetLogFiles(Arrays.asList(targetDir.toFile().list()));
                     Collections.sort(allFileName);
                     int allFileNameSize = allFileName.size();
                     if (tail.length > 0)
@@ -311,7 +311,7 @@ public class WinApacheLogProducer extends Thread
                         }
                         if (this.newFileName.size() > 0)
                         {
-                            this.targetFile = new File(parentDir + "/" + this.newFileName.get(0));
+                            this.targetFile = new File(targetDir + "/" + this.newFileName.get(0));
                             this.newFileName.remove(0);
                             targetFileNames = allFileName;
                         }
