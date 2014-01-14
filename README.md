@@ -52,8 +52,19 @@ WindowsのApacheログを収集するProducerプロセス。
 # ./stop_kafka_producer  
 ```
 
-
 ### WinApacheLogProducer
+#### インストール手順
+* kafka-log-producer.zip をログ収集対象サーバの /Tools ディレクトリ配下に配置する。
+* kafka-log-producer.zipを展開し、ディレクトリ名を kafka-log-producer にリネームする。
+
+#### 起動手順
+* bin/start_kafka_producer.bat を実行する。
+* bin/check_apache_logs.bat のディレクトリ設定を更新し、bin/check_apache_logs.bat を実行する。  
+** Windowsにおいてはdirコマンドなどでファイルのチェックを行わないとファイルが実際に更新されないため、check_apache_logs.batを実行している。
+
+#### 終了手順
+* check_apache_logs.bat を実行しているウィンドウを終了する。
+* start_kafka_producer.bat を実行しているウィンドウを終了する。
 
 ## 設定項目
 ### LinuxApacheLogProducer
