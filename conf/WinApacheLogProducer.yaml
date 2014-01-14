@@ -1,12 +1,18 @@
 ## LinuxApacheLogProducer Config
-## Log Tail Target Dir
-tail.target.dir     : "/etc/httpd/logs/"
+## Apacheログが出力されるログディレクトリ
+tail.target.dir     : 'C:\AcroWorks\Tools\Apache24\logs'
 ## Kafka Topic
 kafka.topic         : "ApacheLog"
+## Apacheログのフォーマット
 apachelog.format    : '%h %l %u %t \"%r\" %>s %b %D %T'
+## KafkaServerに対して投入する際の時刻フォーマット
 jsondate.format     : "yyyy-MM-dd'T'HH:mm:SSSZ"
 
 ## KafkaProducerConfig
+## Kafkaに投入する際のシリアライザ定義
 kafka.serializer.class : "kafka.serializer.StringEncoder"
+## Kafkaに投入する際の圧縮実行フラグ(0:未圧縮、1:圧縮)
 kafka.compression.codec : "1"
+## Kafkaクラスタ中のBrokerのアドレスリスト
 kafka.broker.list  : "KafkaServer:9092"
+
