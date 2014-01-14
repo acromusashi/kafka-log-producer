@@ -20,9 +20,32 @@ WindowsのApacheログを収集するProducerプロセス。
 ソースをGitHubから取得後、取得先ディレクトリに移動し下記のコマンドを実行する。  
 コマンド実行の結果、「kafka-log-producer.zip」が生成される。  
 ```
-mvn clean package  
+# mvn clean package  
 ```
 
+## 利用手順
+### LinuxApacheLogProducer
+#### インストール手順
+* kafka-log-producer.zip をログ収集対象サーバの /opt ディレクトリ配下に配置する。
+* ログ収集対象サーバにログインし、下記のコマンドを実行する。
+```
+# cd /opt  
+# unzip kafka-log-producer.zip  
+# ln -s kafka-log-producer-0.1.0 kafka-log-producer  
+# chmod +x kafka-log-producer/bin/*  
+# mkdir kafka-log-producer/log  
+```
+
+#### 起動手順
+
+### WinApacheLogProducer
+
+## 設定項目
+### LinuxApacheLogProducer
+LinuxApacheLogProducer.yaml 参照。
+
+### WinApacheLogProducer
+WinApacheLogProducer.yaml 参照。
 
 ## License
 This software is released under the MIT License, see LICENSE.txt.
