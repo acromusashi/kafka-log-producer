@@ -57,10 +57,10 @@ WindowsのApacheログを収集するProducerプロセス。
 
 ## 設定項目
 ### LinuxApacheLogProducer
-LinuxApacheLogProducer.yaml 参照。
+[LinuxApacheLogProducer.yaml](https://github.com/acromusashi/kafka-log-producer/blob/master/conf/LinuxApacheLogProducer.yaml) 参照。
 
 ### WinApacheLogProducer
-WinApacheLogProducer.yaml 参照。
+[WinApacheLogProducer.yaml](https://github.com/acromusashi/kafka-log-producer/blob/master/conf/WinApacheLogProducer.yaml) 参照。
 
 ## License
 This software is released under the MIT License, see LICENSE.txt.
