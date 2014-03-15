@@ -105,7 +105,7 @@ public class WinApacheLogProducer extends Thread
     protected transient ObjectMapper                        objectMapper;
 
     /** 接続をログファイルから拒否されたときにリトライする回数 */
-    private int                                             retryNum;
+    private int                                             retryNum              = 1;
 
     /** jsonで送る際の時刻のフォーマット */
     private String                                          jsonDateFormatStr;
