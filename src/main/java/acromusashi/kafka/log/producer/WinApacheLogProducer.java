@@ -47,6 +47,7 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -343,6 +344,11 @@ public class WinApacheLogProducer extends Thread
         List<KeyedMessage<String, String>> list = Lists.newArrayList();
         for (String apacheLogStr : eachStr)
         {
+            if (StringUtils.isBlank(apacheLogStr))
+            {
+                continue;
+            }
+            
             KeyedMessage<String, String> convertedMessage = null;
 
             try
