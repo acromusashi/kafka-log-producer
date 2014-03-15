@@ -1,11 +1,14 @@
+@echo off
+
 set TARGET_DIR=C:\Tools\Apache\logs
-cd %%TARGET_DIR
+cd %TARGET_DIR%
 
-rem ŒJ‚è•Ô‚µŽÀŽ{
-FOR /L %%i IN (1,1,1000000) Do (
-
-    rem ”­Œ©‚µ‚½ƒtƒ@ƒCƒ‹‚²‚Æ‚ÉŽÀŽ{
+@rem ç¹°ã‚Šè¿”ã—å®Ÿæ–½
+FOR /L %%i IN (1,1,1000000000) Do (
+    sleep 1
+    @rem ç™ºè¦‹ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã”ã¨ã«å®Ÿæ–½
     for %%f in (access*) do dir %%f
    
   )
 )
+
