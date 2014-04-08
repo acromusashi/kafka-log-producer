@@ -4,7 +4,7 @@
   <name>kafka-log-producer</name>
   <groupId>jp.co.acroquest.acromusashi</groupId>
   <artifactId>kafka-log-producer</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <packaging>jar</packaging>
   <description>Realtime Big Data Platform</description>
   <url>https://github.com/acromusashi</url>
