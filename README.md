@@ -76,6 +76,7 @@ Windows上のApacheが出力したログをKafkaクラスタに投入するこ�
 設定項目は「スタートガイド」を参照してください。
 
 ## ダウンロード
+https://github.com/acromusashi/kafka-log-producer/wiki/Download
 
 ## License
 This software is released under the MIT License, see LICENSE.txt.
